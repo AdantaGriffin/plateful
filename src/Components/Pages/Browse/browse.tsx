@@ -1,7 +1,6 @@
 import styles from './browse.module.scss';
 import { Link } from 'react-router-dom';
 import { useApi } from '../../Api/api';
-import { useParams } from 'react-router-dom';
 
 
 function Browse(){
