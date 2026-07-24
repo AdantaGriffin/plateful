@@ -1,0 +1,36 @@
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Playfair Display";
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+}
+h2{
+    font-size: 36px;
+}
+p{
+    font-family: "Lora";
+    color: grey;
+}
+
+.outlet{
+    width: 100%;
+    transition-duration: 1s;
+    position: relative;
+    top: 60px;
+    padding: 0 0 100px 0;
+}
+.darkMode{
+    overflow: hidden;
+    transition-duration: 1s;
+    background-color: black;
+    color: white;
+    height: fit-content;
+    .outlet{
+        position: relative;
+        top: 60px;
+    }
+}
+body {
+    margin: 0;
+}

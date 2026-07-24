@@ -1,0 +1,37 @@
+.recipes{
+    display: grid;
+
+    .recipeArticle{
+
+        .recipeImage{
+            width: clamp(420px, 100%, 60%);
+            height: 400px;
+            display: block;
+            margin: auto;
+        }
+        .recipeHeader{
+            padding: 0 10px;
+        }
+        .recipeOrigin{
+            border: 1px solid lightgrey;
+            margin: 0 10px;
+            width: fit-content;
+            border-radius: 10px;
+            background-color: lightgrey;
+            color: white;
+            padding: 0 5px;
+        }
+        .recipeInstructions{
+            padding: 10px;
+        }
+        .recipeList{
+            list-style: armenian;
+        }
+        .recipeVideo{
+            width: clamp(400px, 100%, 60%);
+            height: 400px;
+            display: block;
+            margin: auto;
+        }
+    }
+}

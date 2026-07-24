@@ -1,0 +1,37 @@
+.favorites{
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+}
+.favoritesHeader{
+    display: grid;
+}
+.favoritesDisplay{
+    min-height: 70vh;
+    display: grid;
+
+    .favoritesItem{
+        margin: auto;
+        .favoritesArticle{
+                box-shadow: 1px 1px 10px lightgrey;
+                border-radius: 20px;
+                overflow: hidden;
+            img{
+                width: 450px;
+                height: 300px;
+                border-radius: 20px 20px 0 0;
+                &:hover{
+                    transform: scale(1.1);
+                    transition-duration: 1s;
+                }
+            }
+        }
+    }
+    .noFavoritesData{
+        border: 1px solid lightgrey;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+    }
+}
