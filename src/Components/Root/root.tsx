@@ -4,7 +4,7 @@ import Header from "../Header/header";
 import { useApi } from '../Api/api';
 
 function Root(){
-    const {darkMode, setDarkMode} = useApi();
+    const {darkMode} = useApi();
     return(
         <section className={darkMode ? styles.root : styles.darkMode}>
             <Header/>

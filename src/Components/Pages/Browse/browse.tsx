@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 
 
 function Browse(){
-    const {id} = useParams();
     const {categories, selectedCategory, setSelectedCategory, displayCategory, setFilterDisplay, userList, setFavorites} = useApi();
     //console.log(filterDisplay)
 

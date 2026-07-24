@@ -1,10 +1,8 @@
 import styles from './favorites.module.scss';
 import { Link } from 'react-router-dom';
 import { useApi } from '../../Api/api';
-import { useParams } from 'react-router-dom';
 
 function Favorites(){
-    const {id} = useParams();
     const {favorites} = useApi();
 
     return(
