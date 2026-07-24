@@ -4,7 +4,7 @@ import { useApi } from '../../Api/api';
 
 
 function Browse(){
-    const {categories, selectedCategory, setSelectedCategory, displayCategory, setFilterDisplay, userList, setFavorites} = useApi();
+    const {categories, selectedCategory, setSelectedCategory, displayCategory, setFilterDisplay, userList, favorites,  setFavorites} = useApi();
     //console.log(filterDisplay)
 
     const displayAfterFilter = userList?.length > 0 ? displayCategory.filter(meal => userList.some(userMeal => userMeal.idMeal === meal.idMeal)) : displayCategory;
@@ -20,6 +20,18 @@ function Browse(){
                 </header>
 
                 <form className={styles.browseForm}>
+
+                    <div className={styles.formSection2}>
+                        <div className={styles.formSection2Div}>
+                            <h3>Cuisine: </h3>
+                            <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory} className={styles.select}>
+                                    <option>select a category</option>
+                                {categories?.map(x => (
+                                    <option key={x.idCategory} value={x.strCategory}>{x.strCategory}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
 
                     <div className={styles.formSection1}>
 
@@ -40,17 +52,6 @@ function Browse(){
 
                     </div>
 
-                    <div className={styles.formSection2}>
-                        <div className={styles.formSection2Div}>
-                            <h3>Cuisine: </h3>
-                            <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory} className={styles.select}>
-                                    <option>select a category</option>
-                                {categories?.map(x => (
-                                    <option key={x.idCategory} value={x.strCategory}>{x.strCategory}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
 
                     <div className={styles.formSection3}>
                         clear filter
@@ -78,7 +79,7 @@ function Browse(){
                                                 <p className={styles.recipeArea}>{x.strArea ? x.strArea : x.strCountry}</p>
                                                 <button
                                                 onClick={() => setFavorites(prev => [...prev, x])}
-                                                 className={styles.recipeFav}>
+                                                className={favorites.length > 0 && favorites.some(favorite => favorite.idMeal === x.idMeal) ? styles.recipeFav2 : styles.recipeFav}>
                                                     <img src="/icons/hearticon.svg"/>
                                                 </button>
                                             </div>

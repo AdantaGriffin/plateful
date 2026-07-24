@@ -1,7 +1,6 @@
 .browse{
     display: grid;
     gap: 20px;
-    min-height: 100vh;
     padding: 10px;
 }
 .browseHeader{
@@ -86,6 +85,7 @@
 }
 .browseDisplay{
     display: grid;
+    min-height: 50vh;
 
     .recipeCardListContainer{
 
@@ -116,19 +116,29 @@
                         background-position: center;
                         position: relative;
                         &:hover{
-                            transform: scale(1.1);
-                            transition-duration: 1s;
+                            cursor: pointer;
                         }
                         .recipeBanner{
                             display: flex;
                             justify-content: space-between;
                             padding: 5px;
-                            button{
+                            .recipeFav{
                                 &:hover{
                                     cursor: pointer;
                                 }
                                 &:active{
-                                    opacity: .6;
+                                    opacity:.7;
+                                }
+                            }
+                            .recipeFav2{
+                                background-color: red;
+                                border-radius: 20px;
+                                img{
+                                    height: 15px;
+                                    width: 15px;
+                                    margin: 4px;
+                                    display: flex;
+                                    justify-content: center;
                                 }
                             }
 

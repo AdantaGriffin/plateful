@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useApi } from '../Api/api';
 
 function Header(){
-    const {darkMode, setDarkMode} = useApi();
+    const {darkMode, setDarkMode, favorites} = useApi();
     const goDark = () => {
         setDarkMode(prev => !prev)
     }
@@ -27,7 +27,7 @@ function Header(){
                         <Link to="/favorites">
                             <li className={styles.navListLink}>
                                 <img src="/icons/hearticon.svg" alt="heart icon"/>
-                                <p>Favorites</p>
+                                <p>Favorites {favorites.length > 0 ? favorites.length : ""}</p>
                             </li>
                         </Link>
                         <Link to="/mealplan">
